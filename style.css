@@ -7,12 +7,97 @@ body {
     rgb(15, 42, 117),
     rgb(199, 216, 224)
   );
-  height: 100vh;
+  min-height: 100vh;
   background-repeat: no-repeat;
   display: flex;
-  justify-content: center;
   align-items: center;
   font-family: Helvetica, sans-serif;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+header {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 8%;
+  background: #0b173f;
+  border-bottom: 3px solid #79e4db;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #79e4db;
+  color: #0b173f;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.logo-text {
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-links a {
+  color: #d2d9ea;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: white;
+  background: #23345d;
+}
+
+.nav-links a:hover {
+  transform: translateY(-2px);
+}
+footer {
+  clear: both;
+  margin-top: 50px;
+  min-height: 40px;
+  border-top: 2px solid rgb(242, 255, 255);
+  padding-top: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #0b173f;
+  border-top: 3px solid #79e4db;
+  color: white;
 }
 .hero {
   display: flex;
@@ -37,6 +122,9 @@ body {
 }
 .contacts a {
   text-decoration: none;
+}
+.contacts a:checked {
+  color: rgb(9, 9, 102);
 }
 .contacts ul {
   list-style: none;
@@ -65,58 +153,88 @@ body {
   object-fit: contain;
   border-radius: 8px;
 }
-
-/* For phone */
-@media screen and (max-width: 600px) {
-  body {
-    min-height: 100vh;
-    height: auto;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .hero {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 350px;
-    box-sizing: border-box;
-    padding: 20px;
-  }
-
-  .profile {
-    width: 100%;
-  }
-
-  .heading {
-    font-size: 12px;
-  }
-
-  .contacts ul {
-    padding-left: 0;
-    margin-left: 0;
-    overflow-wrap: anywhere;
-  }
-
-  .contacts li {
-    font-size: 13px;
-    margin-bottom: 12px;
-  }
-
-  .code {
-    margin-left: 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  .code h2 {
-    font-size: 18px;
-  }
-
-  .code img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-  }
+.projects {
+  margin-top: 50px;
+  width: 75%;
+  height: 100%;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  justify-content: center;
+  padding: 20px 24px;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
+.projects h3 {
+  font-size: 24px;
+  color: rgb(11, 11, 59);
+}
+
+.project-content {
+  width: 100%;
+  min-width: 0;
+  max-width: 900px;
+  height: auto;
+  display: flex;
+  gap: 50px;
+}
+.project1,
+.project2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  background: linear-gradient(to bottom right, azure, lightblue);
+  min-height: 300px;
+  min-width: 0px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+.project1 img,
+.project2 img {
+  display: block;
+  padding: 15px;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  object-fit: contain;
+  margin-top: -40px;
+  margin-bottom: -50px;
+}
+
+.project1 p,
+.project2 p {
+  text-align: justify;
+  padding: 15px;
+  color: darkblue;
+}
+
+.project1 a,
+.project2 a {
+  margin-top: auto;
+  align-items: center;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 10px;
+  color: darkblue;
+  box-shadow: rgba(0, 0, 0, 0.15);
+}
+
+.project1 a:checked,
+.project2 a:checked {
+  color: darkblue;
+}
+
+.project1 a:hover,
+.project2 a:hover {
+  transition: background-color 0.3s ease;
+  transition: 0.3s ease;
+  background-color: rgba(148, 129, 255, 0.15);
+  transform: translateY(-2px);
+}
+/* For phone */
