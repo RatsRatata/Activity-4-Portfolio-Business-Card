@@ -17,7 +17,7 @@ body {
     rgb(15, 42, 117),
     rgb(199, 216, 224)
   );
-  min-height: 100vh;
+  min-min-height: 100vh;
   width: 100%;
   min-width: 320px;
   background-repeat: no-repeat;
@@ -29,6 +29,92 @@ body {
 }
 img {
   max-width: 100%;
+}
+header {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 8%;
+  background: #0b173f;
+  border-bottom: 3px solid #79e4db;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #79e4db;
+  color: #0b173f;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.logo-text {
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-links a {
+  color: #d2d9ea;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: white;
+  background: #23345d;
+}
+
+.nav-links a:hover {
+  transform: translateY(-2px);
+}
+footer {
+  clear: both;
+  margin-top: 50px;
+  min-height: 40px;
+  border-top: 2px solid rgb(242, 255, 255);
+  padding-top: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #0b173f;
+  border-top: 3px solid #79e4db;
+  color: white;
+  flex-direction: column;
+  overflow-y: scroll;
 }
 header {
   width: 100%;
@@ -137,6 +223,9 @@ footer {
 }
 .contacts a {
   text-decoration: none;
+}
+.contacts a:checked {
+  color: rgb(9, 9, 102);
 }
 .contacts a:checked {
   color: rgb(9, 9, 102);
