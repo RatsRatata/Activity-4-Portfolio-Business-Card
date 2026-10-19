@@ -17,7 +17,7 @@ body {
     rgb(15, 42, 117),
     rgb(199, 216, 224)
   );
-  min-min-height: 100vh;
+  min-height: 100vh;
   width: 100%;
   min-width: 320px;
   background-repeat: no-repeat;
